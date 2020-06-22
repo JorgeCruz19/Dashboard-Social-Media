@@ -5,15 +5,12 @@
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Dashboard Social Media</title>
       <!-- Font -->
-      <link
-         href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap"
-         rel="stylesheet"
-      />
+      <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet" />
       <!-- Css -->
       <link rel="stylesheet" href="./css/styles.css" />
    </head>
    <body>
-      <div class="container">
+      <main class="container">
          <header class="header">
             <div class="wrapper">
                <div>
@@ -23,7 +20,7 @@
                <div class="toggle-switch">
                   <span class="switch-title">Dark Mode</span>
                   <label class="switch">
-                     <input type="checkbox" class="switch-check" />
+                     <input type="checkbox" class="switch-check" id="checkbox" />
                      <span class="switch-circle"></span>
                   </label>
                </div>
@@ -91,116 +88,118 @@
                </div>
             </div>
          </section>
-         <section>
+         <section class="bottom-cards">
             <div class="wrapper">
                <h2 class="overview-title">Overview - Today</h2>
-               <article class="card-overview">
-                  <p class="card-overview-text">
-                     Page views
-                     <img src="./img/icon-facebook.svg" alt="Logo Facebook" />
-                  </p>
-                  <p class="card-overview-number">
-                     87
-                     <span>
-                        <img src="./img/icon-up.svg" alt="Icon up" />
-                        3%
-                     </span>
-                  </p>
-               </article>
-               <article class="card-overview">
-                  <p class="card-overview-text">
-                     Likes
-                     <img src="./img/icon-facebook.svg" alt="Logo Facebook" />
-                  </p>
-                  <p class="card-overview-number">
-                     52
-                     <span class="decrement">
-                        <img src="./img/icon-down.svg" alt="Icon down" />
-                        2%
-                     </span>
-                  </p>
-               </article>
-               <article class="card-overview">
-                  <p class="card-overview-text">
-                     Likes
-                     <img src="./img/icon-instagram.svg" alt="Logo Instagram" />
-                  </p>
-                  <p class="card-overview-number">
-                     5462
-                     <span>
-                        <img src="./img/icon-up.svg" alt="Icon up" />
-                        2257%
-                     </span>
-                  </p>
-               </article>
-               <article class="card-overview">
-                  <p class="card-overview-text">
-                     Profile views
-                     <img src="./img/icon-instagram.svg" alt="Logo Instagram" />
-                  </p>
-                  <p class="card-overview-number">
-                     52k
-                     <span>
-                        <img src="./img/icon-up.svg" alt="Icon up" />
-                        1375%
-                     </span>
-                  </p>
-               </article>
-               <article class="card-overview">
-                  <p class="card-overview-text">
-                     Retweets
-                     <img src="./img/icon-twitter.svg" alt="Logo Twitter" />
-                  </p>
-                  <p class="card-overview-number">
-                     117
-                     <span>
-                        <img src="./img/icon-up.svg" alt="Icon up" />
-                        303%
-                     </span>
-                  </p>
-               </article>
-               <article class="card-overview">
-                  <p class="card-overview-text">
-                     Likes
-                     <img src="./img/icon-twitter.svg" alt="Logo Twitter" />
-                  </p>
-                  <p class="card-overview-number">
-                     507
-                     <span>
-                        <img src="./img/icon-up.svg" alt="Icon up" />
-                        553%
-                     </span>
-                  </p>
-               </article>
-               <article class="card-overview">
-                  <p class="card-overview-text">
-                     Page views
-                     <img src="./img/icon-youtube.svg" alt="Logo Youtube" />
-                  </p>
-                  <p class="card-overview-number">
-                     107
-                     <span class="decrement">
-                        <img src="./img/icon-down.svg" alt="Icon down" />
-                        19%
-                     </span>
-                  </p>
-               </article>
-               <article class="card-overview">
-                  <p class="card-overview-text">
-                     Total views
-                     <img src="./img/icon-youtube.svg" alt="Logo Youtube" />
-                  </p>
-                  <p class="card-overview-number">
-                     1407
-                     <span class="decrement">
-                        <img src="./img/icon-down.svg" alt="Icon down" />
-                        12%
-                     </span>
-                  </p>
-               </article>
+               <div class="container-cards-overview">
+                  <article class="card-overview">
+                     <p class="card-overview-text">
+                        Page views
+                        <img src="./img/icon-facebook.svg" alt="Logo Facebook" />
+                     </p>
+                     <p class="card-overview-number">
+                        87
+                        <span>
+                           <img src="./img/icon-up.svg" alt="Icon up" />
+                           3%
+                        </span>
+                     </p>
+                  </article>
+                  <article class="card-overview">
+                     <p class="card-overview-text">
+                        Likes
+                        <img src="./img/icon-facebook.svg" alt="Logo Facebook" />
+                     </p>
+                     <p class="card-overview-number">
+                        52
+                        <span class="decrement">
+                           <img src="./img/icon-down.svg" alt="Icon down" />
+                           2%
+                        </span>
+                     </p>
+                  </article>
+                  <article class="card-overview">
+                     <p class="card-overview-text">
+                        Likes
+                        <img src="./img/icon-instagram.svg" alt="Logo Instagram" />
+                     </p>
+                     <p class="card-overview-number">
+                        5462
+                        <span>
+                           <img src="./img/icon-up.svg" alt="Icon up" />
+                           2257%
+                        </span>
+                     </p>
+                  </article>
+                  <article class="card-overview">
+                     <p class="card-overview-text">
+                        Profile views
+                        <img src="./img/icon-instagram.svg" alt="Logo Instagram" />
+                     </p>
+                     <p class="card-overview-number">
+                        52k
+                        <span>
+                           <img src="./img/icon-up.svg" alt="Icon up" />
+                           1375%
+                        </span>
+                     </p>
+                  </article>
+                  <article class="card-overview">
+                     <p class="card-overview-text">
+                        Retweets
+                        <img src="./img/icon-twitter.svg" alt="Logo Twitter" />
+                     </p>
+                     <p class="card-overview-number">
+                        117
+                        <span>
+                           <img src="./img/icon-up.svg" alt="Icon up" />
+                           303%
+                        </span>
+                     </p>
+                  </article>
+                  <article class="card-overview">
+                     <p class="card-overview-text">
+                        Likes
+                        <img src="./img/icon-twitter.svg" alt="Logo Twitter" />
+                     </p>
+                     <p class="card-overview-number">
+                        507
+                        <span>
+                           <img src="./img/icon-up.svg" alt="Icon up" />
+                           553%
+                        </span>
+                     </p>
+                  </article>
+                  <article class="card-overview">
+                     <p class="card-overview-text">
+                        Page views
+                        <img src="./img/icon-youtube.svg" alt="Logo Youtube" />
+                     </p>
+                     <p class="card-overview-number">
+                        107
+                        <span class="decrement">
+                           <img src="./img/icon-down.svg" alt="Icon down" />
+                           19%
+                        </span>
+                     </p>
+                  </article>
+                  <article class="card-overview">
+                     <p class="card-overview-text">
+                        Total views
+                        <img src="./img/icon-youtube.svg" alt="Logo Youtube" />
+                     </p>
+                     <p class="card-overview-number">
+                        1407
+                        <span class="decrement">
+                           <img src="./img/icon-down.svg" alt="Icon down" />
+                           12%
+                        </span>
+                     </p>
+                  </article>
+               </div>
             </div>
          </section>
-      </div>
+      </main>
 
       <script src="./js/main.js"></script>
    </body>

@@ -13,19 +13,19 @@ body {
 /* Variables */
 :root {
    /* Light Theme */
-   --light-bg-primary: hsl(0, 0%, 100%);
+   /* --light-bg-primary: hsl(0, 0%, 100%);
    --light-bg-card: hsl(227, 47%, 96%);
    --light-bg-top: hsl(225, 100%, 98%);
    --light-color-text-primary: hsl(228, 12%, 44%);
    --light-color-text-secondary: hsl(230, 17%, 14%);
-   --light-bg-switch-toggle: hsl(230, 22%, 74%);
+   --light-bg-switch-toggle: hsl(230, 22%, 74%); */
    /* Dark Theme*/
-   --dark-bg-primary: hsl(230, 17%, 14%);
-   --dark-bg-card: hsl(232, 19%, 15%);
-   --dark-bg-top: hsl(228, 28%, 20%);
+   /* --dark-bg-primary: hsl(230, 17%, 14%);
+   --dark-bg-top: hsl(232, 19%, 15%);
+   --dark-bg-card: hsl(228, 28%, 20%);
    --dark-color-text-primary: hsl(0, 0%, 100%);
    --dark-color-text-secondary: hsl(228, 34%, 66%);
-   --dark-bg-switch-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+   --dark-bg-switch-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%)); */
    /* Colors */
    --color-facebook: hsl(195, 100%, 50%);
    --color-twitter: hsl(203, 89%, 53%);
@@ -39,6 +39,7 @@ body {
 body {
    font-family: var(--font-primary);
    text-align: center;
+   background-color: var(--light-bg-primary);
 }
 /* Auxiliares */
 .decrement {
@@ -54,9 +55,10 @@ body {
    display: grid;
    gap: 1.8rem 0;
 }
-.container{
-   max-width: 1440px;
+.container {
+   max-width: var(--desktop-max-width);
    margin: 0 auto;
+   min-height: 100vh;
 }
 /* Header */
 .header {
@@ -70,11 +72,11 @@ body {
    text-align: left;
    font-size: 1.7rem;
    margin-bottom: 0.3rem;
-   color: var(--light-color-text-secondary);
+   color: var(--light-color-text-primary);
 }
 .header p {
    text-align: left;
-   color: var(--light-color-text-primary);
+   color: var(--light-color-text-secondary);
    font-weight: 700;
    padding-bottom: 1.6rem;
    margin-bottom: 1rem;
@@ -91,8 +93,8 @@ body {
    width: 55px;
    height: 28px;
 }
-.switch-title{
-   color: var(--light-color-text-primary);
+.switch-title {
+   color: var(--light-color-text-secondary);
    font-size: 1.2rem;
    font-weight: 700;
 }
@@ -112,7 +114,7 @@ body {
 }
 .switch-check:checked + .switch-circle::before {
    transform: translateX(-28px);
-   background-color: var(--dark-bg-card);
+   background-color: var(--light-bg-card);
 }
 .switch-circle {
    position: absolute;
@@ -141,6 +143,9 @@ body {
 .top-cards {
    margin-top: -4rem;
 }
+.bottom-cards {
+   margin-bottom: 1.8rem;
+}
 /* Cards */
 .card {
    position: relative;
@@ -148,6 +153,12 @@ body {
    border-radius: 5px;
    background-color: var(--light-bg-card);
    overflow: hidden;
+   transition: all 0.4s ease;
+}
+.card:hover,
+.card-overview:hover {
+   background-color: var(--light-bg-switch-toggle);
+   cursor: pointer;
 }
 .card:last-child {
    margin-bottom: 1.8rem;
@@ -172,7 +183,7 @@ body {
    background: var(--color-youtube);
 }
 .card-social-name {
-   color: var(--light-color-text-primary);
+   color: var(--light-color-text-secondary);
    display: flex;
    justify-content: center;
    align-items: center;
@@ -190,10 +201,10 @@ body {
    display: block;
    font-size: 4rem;
    font-weight: 700;
-   color: var(--light-color-text-secondary);
+   color: var(--light-color-text-primary);
 }
 .card-information span:last-child {
-   color: var(--light-color-text-primary);
+   color: var(--light-color-text-secondary);
    font-size: 0.9rem;
    letter-spacing: 5px;
    text-transform: uppercase;
@@ -218,22 +229,27 @@ body {
 }
 
 /* Overviews */
+
 .overview-title {
    color: var(--light-color-text-primary);
    margin-bottom: 2rem;
    text-align: left;
 }
+.container-cards-overview {
+   display: grid;
+   row-gap: 1.8rem;
+}
 .card-overview {
    background-color: var(--light-bg-card);
    padding: 1.8rem 1.5rem;
-   margin-bottom: 1.5rem;
    border-radius: 5px;
+   transition: all 0.4s ease;
 }
 .card-overview-text {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   color: var(--light-color-text-primary);
+   color: var(--light-color-text-secondary);
    font-size: 0.8rem;
    font-weight: 700;
    margin-bottom: 1rem;
@@ -244,7 +260,7 @@ body {
    align-items: flex-end;
    font-size: 2.5rem;
    font-weight: 700;
-   color: var(--light-color-text-secondary);
+   color: var(--light-color-text-primary);
 }
 .card-overview-number span {
    display: flex;
@@ -257,9 +273,25 @@ body {
 .card-overview-number span img {
    margin-right: 0.3rem;
 }
-
-@media screen and (min-width: 768px){
-   .header .wrapper{
+.card:hover,
+.card-overview:hover {
+   background-color: var(--light-card-hover);
+}
+@media screen and (min-width: 480px) {
+   .grid,
+   .container-cards-overview {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 2rem;
+   }
+   .card:last-child {
+      margin-bottom: 0;
+   }
+   .top-cards {
+      margin-bottom: 4rem;
+   }
+}
+@media screen and (min-width: 768px) {
+   .header .wrapper {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -269,7 +301,41 @@ body {
       margin-bottom: 0;
       border-bottom: none;
    }
-   .switch{
-      margin-left: .5rem;
+   .switch {
+      margin-left: 0.5rem;
    }
+   .grid,
+   .container-cards-overview {
+      grid-template-columns: 1fr 1fr 1fr;
+   }
+}
+@media screen and (min-width: 1024px) {
+   .grid,
+   .container-cards-overview {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+   }
+   .card-overview-text {
+      font-size: 1rem;
+   }
+}
+
+.is-dark-mode {
+   --light-bg-primary: hsl(230, 17%, 14%);
+   --light-bg-card: hsl(228, 28%, 20%);
+   --light-bg-top: hsl(232, 19%, 15%);
+   --light-color-text-primary: hsl(0, 0%, 100%);
+   --light-color-text-secondary: hsl(228, 34%, 66%);
+   --light-bg-switch-toggle: hsl(230, 22%, 74%);
+   --dark-bg-switch-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
+   --light-card-hover: #333a56;
+}
+.is-light-mode {
+   --light-bg-primary: hsl(0, 0%, 100%);
+   --light-bg-card: hsl(227, 47%, 96%);
+   --light-bg-top: hsl(225, 100%, 98%);
+   --light-color-text-primary: hsl(228, 12%, 44%);
+   --light-color-text-secondary: hsl(230, 17%, 14%);
+   --light-bg-switch-toggle: hsl(230, 22%, 74%);
+   --light-card-hover: #E1E3F0;
+   --dark-bg-switch-toggle: linear-gradient(to right, hsl(210, 78%, 56%), hsl(146, 68%, 55%));
 }
